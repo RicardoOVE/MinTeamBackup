@@ -1,0 +1,22 @@
+
+const database = 'MinTic4';
+//cambiar nombre de la colección para insertar mas registros
+const collection = 'Proyectos';
+
+use(database);
+
+const proyectos = [
+  {
+    "nombre": "Project 4",
+    "objetivogeneral":"Evaluar el uso de diversos carbonatos en la producción de materiales compuestos y su efecto en la dureza final del producto.",
+    "objetivoespecificos": ["Estudio bibliográfico de tipos de carbonatos, tamaño de partícula y mezclas usadas en la producción de materiales compuestos.", "Realizar ensayos de experimentos para la producción de materiales compuestos usando carbonatos", "Llevar a cabo la producción de materiales compuestos en el laboratorio.", "Evaluar las propiedades químicas y mecánicas de los materiales compuestos producidos en el laboratorio."],
+    "presupuesto": Decimal128('27400000'),
+    "fechainicio": new Date(),
+    "fechafin": new Date(new Date().getTime() + 60*24*60*60000),
+    "lider": db.Usuarios.findOne({correo: 'tereshkova@omegaweb.com'})._id,
+    "fase": "iniciado",
+    "estado": "inactivo"    
+  }  
+  ]
+
+  db.getCollection(collection).insertMany(proyectos);
